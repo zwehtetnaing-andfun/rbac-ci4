@@ -11,9 +11,6 @@ class RoleController extends BaseController
 {
     public function index()
     {
-        $permissions = (new PermissionModel())->findAll();
-        return view('roles/index',[
-            "permissions" => $permissions
-        ]);
+        
     }
 }
