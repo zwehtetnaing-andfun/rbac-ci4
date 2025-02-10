@@ -10,9 +10,10 @@
             <div class="card px-3 pt-2 bg-white">
                 <div class="card-body">
                     <form action="/login/authenticate" method="POST">
+                        <?= csrf_field() ?>
                         <div class="form-group mb-4">
                             <label for="email" class="mb-2">Email</label>
-                            <input type="email" name="email" id="email" class="form-control rounded-0 ">
+                            <input type="text" name="email" id="email" class="form-control rounded-0 ">
                         </div>
                         <div class="form-group mb-4">
                             <label for="password" class="mb-2">Password</label>

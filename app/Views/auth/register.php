@@ -10,6 +10,8 @@
             <div class="card px-3 pt-2 bg-white">
                 <div class="card-body">
                     <form action="/register/store" method="POST">
+                        <?= csrf_field() ?>
+
                         <div class="form-group mb-4">
                             <label for="username" class="mb-2">Username</label>
                             <input type="text" name="username" id="username" class="form-control rounded-0 ">
