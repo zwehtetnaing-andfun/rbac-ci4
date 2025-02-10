@@ -63,19 +63,17 @@ class AuthController extends BaseController
 
         $user = $userModel->getUserByEmail($this->request->getPost('email'));
 
-
-        if($user && Hash::verify($this->request->getPost('password'),$user['password']) )
+        if ( Hash::verify($this->request->getPost('password'),$user['password']) )
         {
-            
             session()->set([
                 'user_id' => $user['id'],
                 'username' => $user['username'],
                 'email' => $user['email'],
                 'logged_in' => true
             ]);
-
             return redirect()->to('/posts');
         }
+        die('login fail');
         return redirect()->to('/login')->with('error','Invalid credentials');
     }
 
