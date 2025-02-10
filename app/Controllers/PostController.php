@@ -40,8 +40,7 @@ class PostController extends BaseController
         $post = new PostModel();
         $post->save([
             'title' => $this->request->getPost('title'),
-            'content' => $this->request->getPost('content'),
-            'created_by' => session()->get('user_id')
+            'content' => $this->request->getPost('content')
         ]);
 
         return redirect()->to('/posts');
@@ -79,8 +78,8 @@ class PostController extends BaseController
 
     public function delete($id)
     {
-        $user = (new UserModel());
-        $user->delete($id);
+        $post = (new PostModel());
+        $post->delete($id);
         return redirect()->to('/posts');
     }
 

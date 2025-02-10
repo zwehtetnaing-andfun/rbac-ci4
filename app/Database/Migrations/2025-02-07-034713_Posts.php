@@ -24,13 +24,9 @@ class Posts extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => 255,
             ],
-            'created_by' => [
-                'type' => 'INT',
-                'unsigned' => true
-            ],
             'created_at' => [
                 'type'    => 'TIMESTAMP',
-                'default' => new RawSql('CURRENT_TIMESTAMP')
+                'default' => new RawSql('CURRENT_TIMESTAMP'),
             ],
             'updated_at' => [
                 'type'    => 'TIMESTAMP',
@@ -39,7 +35,6 @@ class Posts extends Migration
             ]
         ]);
         $this->forge->addKey('id',true); 
-        $this->forge->addForeignKey('created_by','users','id');
         $this->forge->createTable('posts');
     }
 

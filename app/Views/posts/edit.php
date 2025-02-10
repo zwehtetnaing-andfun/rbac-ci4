@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="float-end">
-                        <a href="/posts" class="btn btn-secondary">cancel</button>
+                        <a href="/posts" class="btn btn-secondary">cancel</a>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
